@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Zahnarztpraxis Julia Bolte</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel='shortcut icon''image/svg+xml' href='/images/logo/logo_inverted.svg' />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+    </head>
+
+
+    <body>
+
+    <!-- navigation bar -->
+        <!-- currently, the fixed top class is added, so it sticks to the top-->
+        <!-- data value of nav bar corresponds to id in each section -->
+        <nav class="navbar navbar-expand-lg fixed-top ">
+
+            <a class="navbar-brand" href="#myheader">
+                <div class="image_logo"></div>
+            </a>
+
+            <button class="navbar-toggler myCollapsedMenuBarIcon" id="myMenuBtn" type="button" data-toggle="collapse" data-target="#myMenu" aria-controls="myMenu" aria-expanded="false" aria-label="Toggle navigation" style="padding:0;border:none;" onclick="this.blur();">
+            </button>
+
+            <div class="collapse navbar-collapse" id="myMenu">
+                <ul class="navbar-nav mr-4">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" data-value="philosophie" href="#">Praxis-Philosophie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-value="team" href="#">Unser Team</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" data-value="jobs" href="#">Stellenangebot</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" data-value="leistungsspektrum" href="#">Leistungsspektrum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-value="service" href="#">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-value="galerie" href="#">Bilder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-value="kontakt" href="#">Kontakt</a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Notdienst -->
+        <!-- <div class="row mainpageparts" id="emergencyservice">
+            <div class="container">
+                
+                <div class="row"> -->
+                    <!-- left side Notizzettel -->
+                    <!-- <div class="col-lg-3 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-6 col-md-10 col-sm-12 desc" style="padding-top:0;">
+                        <div>
+                            <img src="/images/logo/logo_circle.svg" style="width: 5em; height:5em; opacity: 1.0; padding: 0; margin: 0; position: relative; top:3em; left:16em; z-index: 10; box-shadow: 7px 7px 10px rgba(33,33,33,.8);border-radius:50%;" class="img-fluid" alt="">
+                        </div>
+                        <div style="background-image: url('/images/banner/stickynote2.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);">
+                            <h3 style="padding-left:2em; padding-right:5em; padding-top:3em; padding-bottom:none;font-family: Cinzel;">Zahnärztlicher Notdienst<br />am 03.02. und 04.02.24</h3>
+                            <p style="padding-top: 1em; padding-left: 2.5em; padding-right:2em; padding-bottom: 0em;">
+                                <b>Sprechstunde in der Praxis</b><br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;03.02.: 9–11 Uhr<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;04.02.: 9–11 Uhr<br />
+                                Praxis: 03445 772369<br /><br />
+                                In dringenden Fällen können Sie außerhalb der angegeben Zeiten folgende Handynummer nutzen: 0162 9764160<br/><br/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- Feiertage / Urlaub -->
+        <!-- <div class="row mainpageparts" id="holidays">
+            <div class="container">
+                
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-6 col-md-10 col-sm-12 desc" style="padding-top:0;">
+                        <div>
+                            <img src="/images/logo/logo_circle.svg" style="width: 5em; height:5em; opacity: 1.0; padding: 0; margin: 0; position: relative; top:3em; left:16em; z-index: 10; box-shadow: 7px 7px 10px rgba(33,33,33,.8);border-radius:50%;" class="img-fluid" alt="">
+                        </div>
+                        <div style="background-image: url('/images/banner/stickynote2.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);">
+                            <h3 style="padding-left:2em; padding-right:5em; padding-top:3em; padding-bottom:none;font-family: Cinzel;">Urlaub<br />vom 27.–29.12.2023</h3>
+                            <p style="padding-top: 1em; padding-left: 2.5em; padding-right:2em; padding-bottom: 0em;">
+                                Wir haben Urlaub vom 27.–29.12.23. Ab dem 02.01.24 sind wir wieder für Sie da. <br />
+                                Wir wünschen Ihnen und Ihren Lieben eine schöne Weihnachtszeit und einen guten Rutsch in ein gesundes und glückliches neues Jahr! <br/><br/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Praxiseröffnung in einem Zettel -->
+        <!-- <div class="row mainpageparts" id="holidays">
+            <div class="container">
+                
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-6 col-md-10 col-sm-12 desc" style="padding-top:0;">
+                        <div>
+                            <img src="/images/logo/logo_circle_JB.svg" style="width: 5em; height:5em; opacity: 1.0; padding: 0; margin: 0; position: relative; top:3em; left:16em; z-index: 10; box-shadow: 7px 7px 10px rgba(33,33,33,.8);border-radius:50%;" class="img-fluid" alt="">
+                        </div>
+                        <div style="background-image: url('/images/banner/stickynote.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);">
+                            <div style="background-image: url('/images/banner/stickynote.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);"></div> -->
+                            <!-- <div style="background-image: url('/images/banner/papier.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);">
+                            <div style="background-image: url('/images/banner/papier.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);"></div> -->
+                            <!-- <h3 style="padding-left:2em; padding-right:5em; padding-top:3em; padding-bottom:none;font-family: Cinzel;">Ein fröhliches Hallo an<br />all unsere Patient*innen und alle Interessierte.</h3>
+                            <p style="padding-top: 1em; padding-left: 2.5em; padding-right:2em; padding-bottom: 0em;">
+                                Wir arbeiten in den nächsten Wochen an unserer neuen Website. Unser Team ist wie gewohnt in den bekannten Räumlichkeiten für Sie da. <br />
+                                Bis bald! <br/>
+                                Eure ZAP J. Bolte<br/><br/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Praxiseröffnung mit Logo und Zettel -->
+        <div class="row mainpageparts" id="holidays">
+            <div class="container">
+                <h1 style="margin-bottom:-90px;">Ein fröhliches Hallo</h1>
+                
+                <div class="row">
+                    <!-- left side -->
+                    <div class="col-lg-4 col-md-4 col-sm-4" style="padding-top:96px; margin-top:50;border-top:50">
+                        <div>
+                            <img src="/images/logo/logo_ZahnarztpraxisJBolte.png" class="img-fluid" alt="" style="width:100%">
+                        </div>
+                        <div>
+                            <!-- <span>
+                                Zahnarztpraxis JB<br>
+                                Öffnungszeiten<br>
+                                Mo 8–13 | 15–19<br>
+                                Di 8–13<br>
+                                Mi 8–13<br>
+                                Do 8–13 | 15–19<br>
+                                Fr 8–13<br>
+                                Tel: 03445 772369<br> 
+                                Jägerstraße 25<br> 
+                                06618 Naumburg<br>
+                                <br><br><br><br><br>
+                            </span> -->
+                            <p>
+                                <br>
+                                Zahnarztpraxis JB<br>
+                                Öffnungszeiten<br>
+                                Mo 8–13 Uhr | 15–19 Uhr<br>
+                                Di 8–13 Uhr<br>
+                                Mi 8–13 Uhr<br>
+                                Do 8–13 Uhr | 15–19 Uhr<br>
+                                Fr 8–13 Uhr<br>
+                                Tel: 03445 772369<br> 
+                                Jägerstraße 25<br> 
+                                06618 Naumburg
+                            </p>
+                        </div>
+                        <!-- <div><p><br /></p></div> -->
+                         <!-- <div><p></p></div> -->
+                    </div>
+                    <!-- right side -->
+                    
+                    <div class="col-lg-7 col-md-7 col-sm-12 desc" style="padding-top:0;">
+
+                    <!-- <div class="col-lg-3 col-md-1 col-sm-0"></div> -->
+                    <!-- <div class="col-lg-6 col-md-10 col-sm-12 desc" style="padding-top:0;"> -->
+                        <div>
+                            <img src="/images/logo/logo_circle_JB.svg" style="width: 5em; height:5em; opacity: 1.0; padding: 0; margin: 0; position: relative; top:5em; left:16em; z-index: 10; box-shadow: 7px 7px 10px rgba(33,33,33,.8);border-radius:50%;" class="img-fluid" alt="">
+                        </div>
+                        <div style="background-image: url('/images/banner/stickynote.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);">
+                            <div style="background-image: url('/images/banner/stickynote.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);"></div>
+                            <!-- <div style="background-image: url('/images/banner/papier.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);">
+                            <div style="background-image: url('/images/banner/papier.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);"></div> -->
+                            <!-- <h3 style="padding-left:2em; padding-right:5em; padding-top:3em; padding-bottom:none;font-family: 'Cinzel Decorative', cursive; font-size:xx-large;">Ein fröhliches Hallo an<br />all unsere Patient*innen und alle Interessierte.</h3> -->
+                             <!-- <h3 style="padding-left:2em; padding-right:5em; padding-top:3em; padding-bottom:none;font-family: 'Cinzel Decorative', cursive; font-size:x-large;">Ein fröhliches Hallo an<br />all unsere Patient*innen und alle Interessierte.</h3> -->
+                              <h1 style="padding-left:2em; padding-right:5em; padding-top:2em; padding-bottom:none;font-family: 'Cinzel Decorative', cursive; font-size:x-large;">...an all unsere Patient*innen und alle Interessierte.</h1>
+                            <p style="padding-top: 1em; padding-left: 2.5em; padding-right:2em; padding-bottom: 0em; font-size:large;">
+                                Wir arbeiten in den nächsten Wochen an unserer neuen Website. Unser Team ist wie gewohnt in den bekannten Räumlichkeiten für Sie da. <br /><br />
+                                Bis bald! <br/><br />
+                                Eure ZAP J. Bolte
+                                <br><br><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- my header -->
+
+
+        <!-- Home Über uns -->
+        <div class="row mainpageparts" id="home">
+            <div class="container">
+                <h1>Ein fröhliches Hallo</h1>
+                <div class="row">
+                    <!-- left side -->
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div>
+                            <img src="/images/logo/logo_ZahnarztpraxisJBolte.png" class="img-fluid" alt="">
+                            <p>
+                                <br>
+                                Zahnarztpraxis JB<br>
+                                Öffnungszeiten<br>
+                                Mo 8–13 Uhr | 15–19 Uhr<br>
+                                Di 8–13 Uhr<br>
+                                Mi 8–13 Uhr<br>
+                                Do 8–13 Uhr | 15–19 Uhr<br>
+                                Fr 8–13 Uhr<br>
+                                Tel: 03445 772369<br> 
+                                Jägerstraße 25<br> 
+                                06618 Naumburg
+                            </p>
+                        </div>
+                        <!-- <div>
+                            <span>Ein entspannte Atmosphäre</span>
+                        </div> -->
+                        <div><p><br /></p></div>
+                    </div>
+                    <!-- right side -->
+                    <div class="col-lg-7 col-md-7 col-sm-12 desc">
+                        <!-- <div>
+                            <img src="/images/logo/logo_circle_JB.svg" style="width: 5em; height:5em; opacity: 1.0; padding: 0; margin: 0; position: relative; top:3em; left:16em; z-index: 10; box-shadow: 7px 7px 10px rgba(33,33,33,.8);border-radius:50%;" class="img-fluid" alt="">
+                        </div> -->
+                        <div style="background-image: url('/images/banner/papier.jpg');">
+                            <h3 style="padding-left:5em; padding-right:5em; padding-top:3em; padding-bottom:none;">...an all unsere Patient*innen und alle Interessierte.</h3>
+                            <p style="padding-top: 1em; padding-left: 6em; padding-right:6em; padding-bottom: 0em;">
+                            Wir arbeiten in den nächsten Wochen an unserer neuen Website. Unser Team ist wie gewohnt in den bekannten Räumlichkeiten für Sie da. <br /><br />
+                            Bis bald! <br/><br />
+                            Eure ZAP J. Bolte<br />
+                            <!-- <br />
+                            Wir freuen uns auf Sie und Ihre Familie.<br /> -->
+                            <br /><br />
+                            </p>
+                            <!-- <p style="text-align: right; padding-top: 0em; padding-left: 6em; padding-right:6em; padding-bottom: 3em; font-family: 'Cinzel Decorative', cursive;">Birgit Heuer</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Praxis-Philosophie -->
+        
+        <!-- Praxiseröffnung in einem Zettel -->
+        <div class="row mainpageparts" id="holidays">
+            <div class="container">
+                
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-6 col-md-10 col-sm-12 desc" style="padding-top:0;">
+                        <div>
+                            <img src="/images/logo/logo_circle_JB.svg" style="width: 5em; height:5em; opacity: 1.0; padding: 0; margin: 0; position: relative; top:3em; left:16em; z-index: 10; box-shadow: 7px 7px 10px rgba(33,33,33,.8);border-radius:50%;" class="img-fluid" alt="">
+                        </div>
+                        <div style="background-image: url('/images/banner/stickynote.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);">
+                            <div style="background-image: url('/images/banner/stickynote.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);"></div>
+                            <!-- <div style="background-image: url('/images/banner/papier.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);">
+                            <div style="background-image: url('/images/banner/papier.jpg');box-shadow: 0px 25px 45px rgba(33,33,33,.4);"></div> -->
+                            <h3 style="padding-left:2em; padding-right:5em; padding-top:3em; padding-bottom:none;font-family: Cinzel;font-size: x-large;">Ein fröhliches Hallo an<br />all unsere Patient*innen und alle Interessierte.</h3>
+                            <p style="padding-top: 1em; padding-left: 2.5em; padding-right:2em; padding-bottom: 0em;font-size: large">
+                                Wir arbeiten in den nächsten Wochen an unserer neuen Website. Unser Team ist wie gewohnt in den bekannten Räumlichkeiten für Sie da. <br /><br />
+                                Bis bald! <br/><br />
+                                Eure ZAP J. Bolte<br/><br/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kontakt -->
+        <div class="row mainpageparts" id="kontakt">
+            <div class="container">
+                <h1 style="text-align: left;">So finden Sie uns</h1>
+                <div class="row">
+                    <!-- left side -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 desc">
+                        <h3>Kontakt</h3>
+                        <p>
+                            Zahnarztpraxis J. Bolte <br/>
+                            Jägerstraße 25 <br/>
+                            06618 Naumburg <br/>
+                            Telefon: 03445 772369 <br/>
+                        <br />
+                        </p>
+                        <h3>Öffnungszeiten</h3>
+                        <p>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 10%;">Mo</td>
+                                    <td>8.00–13.00 Uhr & 15.00–19.00 Uhr</td>
+                                </tr>
+                                <tr>
+                                    <td>Di</td>
+                                    <td>8.00–13.00 Uhr</td>
+                                </tr>
+                                <tr>
+                                    <td>Mi</td>
+                                    <td>8.00–13.00 Uhr</td>
+                                </tr>
+                                <tr>
+                                    <td>Do</td>
+                                    <td>8.00–13.00 Uhr & 15.00–19.00 Uhr</td>
+                                </tr>
+                                <tr>
+                                    <td>Fr</td>
+                                    <td>8.00–13.00 Uhr</td>
+                                </tr>
+                            </table>
+                            <!-- <p style="padding-top: 0em;">
+                                und nach Vereinbarung
+                            </p> -->
+                            <br />
+                        </p>
+                    </div>
+                    
+                    <!-- Open Street Map -->
+                    <div class="col-lg-6 col-md-6 col-sm-12" >
+                        <div id="map" >
+                        </div>
+
+                        <div style="filter: grayscale(50%) contrast(100%) opacity(100%);
+                        -webkit-filter: grayscale(50%) contrast(100%) opacity(100%);">
+                            <p style="font-size:1em;text-align:left;margin:0;padding:0;background-color: #fff;font-weight:300;line-height:35px;">Scroll um zu zoomen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="page-footer font-small pt-4 hide" style="background-color: rgb(121, 113, 170); position:absolute; bottom:-4em; left:0em; width: 100%; border-bottom: none;">
+                <div class="footer-copyright text-right py-3" style="color: white; padding-right: 5em; padding-left:3em;">Made with love &nbsp; <img src="/images/logo/heart.svg" style="width:1.2rem; padding-top: 0rem;" /> &nbsp; © J. Bolte
+                <!-- <a href="/impressum" target="_blank" style="color: white; position:relative; text-align: right; padding-left: 30%;padding-right: 1em;">Impressum</a>&nbsp;&nbsp;<a href="/datenschutz" target="_blank" style="color: white; padding-left: 1em; position:relative; text-align: right; ">Datenschutz</a> -->
+                </div>
+            </footer>
+
+        </div>
+
+
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src='/js/main.js'></script>
+        
+        <script>
+            // Initialize the map
+            var myMap = L.map('map').setView([51.159, 11.81], 15);
+
+            // Add the tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+            }).addTo(myMap);
+
+            // L.control.zoom({
+            //     position: 'topleft'
+            // }).addTo(myMap);
+
+
+            // Add a marker
+            L.marker([51.1584, 11.8076]).addTo(myMap)
+            .bindPopup('Jägerstraße 25, 06618 Naumburg')
+            .openPopup();
+        </script>
+
+    </body>
+</html>
