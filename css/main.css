@@ -1,3 +1,47 @@
+/* Quicksand */
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 300 700;
+    font-style: normal;
+}
+
+/* Comfortaa */
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 300 700;
+    font-style: normal;
+}
+
+/* Nunito */
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 200 1000;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 200 1000;
+    font-style: italic;
+}
+
+/* Josefin Sans */
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('/fonts/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 700;
+    font-style: italic;
+}
+
 /* Cinzel Decorative */
 @font-face {
     font-family: 'Cinzel Decorative';
@@ -94,13 +138,47 @@
     font-style: italic;
 } */
 
+/* <weight>: Use a value from 300 to 700
+<uniquifier>: Use a unique and descriptive class name */
+
+/* .comfortaa-<uniquifier> {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+
+/* <weight>: Use a value from 300 to 700
+ <uniquifier>: Use a unique and descriptive class name
+
+.quicksand-<uniquifier> {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* .josefin-sans-<uniquifier> {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
 html,h1,h2,h3,h4,h5,h6 {
     /* font-family: 'Roboto', sans-serif; */
-    font-family: 'Cinzel Decorative', cursive;
-    font-weight: 700; 
+    /* font-family: 'Cinzel Decorative', cursive; */
+    /* font-family: "Comfortaa", sans-serif; */
+    /* font-family: "Quicksand", sans-serif; */
+    /* font-family: "Nunito", sans-serif; */
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300; 
 }
 #datenschutz h3, #datenschutz h6, #impressum h3, #impressum h6, #leistungsspektrum h6 {
-    font-family: 'Cinzel', cursive;
+    /* font-family: 'Cinzel', cursive; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: 700; 
     line-height: 1;
 }
@@ -108,7 +186,8 @@ html,h1,h2,h3,h4,h5,h6 {
     padding-left: 0em;
     padding-top: 0.6em;
     font-size: 1.0em;
-    color: rgb(87, 72, 118);
+    /*color: rgb(87, 72, 118);*/ /* dark violet */
+    color: rgb(0, 0, 0);
 }
 #datenschutz h1 {
     font-size: 1.3em;
@@ -176,7 +255,7 @@ body {
 /* navigation */
 .navbar {
     /* background:rgb(0, 77, 91); */
-    background:rgb(121, 113, 170);
+    background:rgb(216, 216, 238);
     /* padding-bottom:3px; */
 }
 .nav-link, .navbar-brand {
@@ -260,18 +339,22 @@ button:active,.button:active:focus,.button:visited {
 .description h1 {
     /* color:rgb(0, 103, 121); */
     /* color:rgb(150, 145, 193); */
-    color: rgb(104, 87, 138);
+    /* color: rgb(104, 87, 138);*/ /* less dark violet */
+    color: rgb(0, 0, 0);
     /* color:#fff; */
     font-weight: 700;
     /* font-family: 'Roboto', sans-serif; */
     /* font-family: 'Cinzel', serif; */
-    font-family: 'Cinzel Decorative', cursive;
+    /* font-family: 'Cinzel Decorative', cursive; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
     line-height: 1.8;
     text-align: center;
 }
 .description p {
     /* color:rgb(0, 77, 91); */
-    color: rgb(104, 87, 138);
+    /* color: rgb(104, 87, 138);*/ /* less dark violet */
+    color: rgb(0, 0, 0);
     font-size: 26px;
     font-weight:normal;
     width: 100%;
@@ -284,7 +367,8 @@ button:active,.button:active:focus,.button:visited {
 .description button {
     background:#fff;
     /* color:rgb(0, 77, 91); */
-    color: rgb(104, 87, 138);
+    /* color: rgb(104, 87, 138);*/ /* less dark violet */
+    color: rgb(0, 0, 0);
 /*    background:#560020ff;*/
 /*    color:#fff;*/
     border:none;
@@ -292,7 +376,8 @@ button:active,.button:active:focus,.button:visited {
 .btn btn-outline-secondary {
     background:#fff;
     /* color:rgb(0, 77, 91); */
-    color: rgb(104, 87, 138);
+    /* color: rgb(104, 87, 138);*/ /* less dark violet */
+    color: rgb(0, 0, 0);
     border:none;
 }
 
@@ -304,7 +389,8 @@ button:active,.button:active:focus,.button:visited {
 }
 .mainpageparts h1 {
     /* color:rgb(0, 77, 91); */
-    color: rgb(104, 87, 138);
+    /* color: rgb(104, 87, 138);*/ /* less dark violet */
+    color: rgb(0, 0, 0);
     /* this margin adjusts where it will scroll to*/
     margin: 2.2em 0 0 0;
     text-align:left;
@@ -330,7 +416,9 @@ button:active,.button:active:focus,.button:visited {
 /* subheadings of the text block */
 .mainpageparts .desc h3 {
     /* color: rgb(0, 77, 91); */
-    color: rgb(104, 87, 138);
+    /* color: rgb(104, 87, 138); */
+    /* color: rgb(104, 87, 138);*/ /* less dark violet */
+    color: rgb(0, 0, 0);
     font-size:20px;
     font-weight:bold;
 }
@@ -406,7 +494,8 @@ button:active,.button:active:focus,.button:visited {
 
 /* Mainpage Gallery Bilder */
 .galerie h1 {
-    color:#560020ff;
+    /* color: rgb(104, 87, 138);*/ /* less dark violet */
+    color: rgb(0, 0, 0);
     margin: 1.6em 0 0 0;
     text-align:left;
 }
